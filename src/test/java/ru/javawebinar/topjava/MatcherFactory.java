@@ -29,7 +29,6 @@ public class MatcherFactory {
                 (a, e) -> assertThat(a).isEqualTo(e));
     }
 
-
     public static <T> Matcher<T> usingIgnoringFieldsComparator(Class<T> clazz, String... fieldsToIgnore) {
         return usingAssertions(clazz,
                 (a, e) -> assertThat(a).usingRecursiveComparison().ignoringFields(fieldsToIgnore).isEqualTo(e),
@@ -40,7 +39,6 @@ public class MatcherFactory {
         private final Class<T> clazz;
         private final BiConsumer<T, T> assertion;
         private final BiConsumer<Iterable<T>, Iterable<T>> iterableAssertion;
-
 
         private Matcher(Class<T> clazz, BiConsumer<T, T> assertion, BiConsumer<Iterable<T>, Iterable<T>> iterableAssertion) {
             this.clazz = clazz;

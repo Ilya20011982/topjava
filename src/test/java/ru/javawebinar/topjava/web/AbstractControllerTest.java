@@ -31,7 +31,7 @@ public abstract class AbstractControllerTest {
     private static final CharacterEncodingFilter CHARACTER_ENCODING_FILTER = new CharacterEncodingFilter();
 
     @Autowired
-    public Environment env;
+    private Environment env;
 
     static {
         CHARACTER_ENCODING_FILTER.setEncoding("UTF-8");
