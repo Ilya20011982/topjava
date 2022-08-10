@@ -35,16 +35,11 @@ public class MealUIController extends AbstractMealController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity<String> createOrUpdate(@Valid Meal meal, BindingResult result) {
         if (meal.isNew()) {
-            super.create(new Meal(null, meal.getDateTime(), meal.getDescription(), meal.getCalories()));
+            super.create(meal);
         } else {
             super.update(meal, meal.getUser().id());
         }
         return ResponseEntity.ok().build();
-
-//            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dateTime,
-//                       @RequestParam String description,
-//                       @RequestParam int calories) {
-//        super.create(new Meal(null, dateTime, description, calories));
     }
 
     @Override

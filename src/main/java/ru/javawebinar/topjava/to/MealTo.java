@@ -22,6 +22,9 @@ public class MealTo extends BaseTo {
 
     private boolean excess;
 
+    public MealTo() {
+    }
+
     @ConstructorProperties({"id", "dateTime", "description", "calories", "excess"})
     public MealTo(Integer id, LocalDateTime dateTime, String description, int calories, boolean excess) {
         super(id);
@@ -41,6 +44,18 @@ public class MealTo extends BaseTo {
 
     public int getCalories() {
         return calories;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
 
     public boolean isExcess() {
